@@ -53,24 +53,38 @@ The following files are available for the train and test data. Their description
 Task given for the assignment:
 
 Merges the training and the test sets to create one data set.
+
 Extracts only the measurements on the mean and standard deviation for each measurement.
+
 Uses descriptive activity names to name the activities in the data set
+
 Appropriately labels the data set with descriptive variable names.
+
 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
 Brief walkthrough of thought process
 
 
 Important coding steps were:
 
 Loading data
+
 Load the activity labels and features text file, grab patterns which matches the words "mean", and "str"
+
 Filter out the mean and standard deviation with grep
+
 Create a measurements variable which contains the variable names to be labelled on the test and training data set
+
 Tidying the name with gsub. 
+
 Then with the column indexes containing mean and std, the train and test set files can be loaded.
+
 Rename the variables using the setnames() functions
+
 Train and test file can be merged with rbind
 
 Convert the variables in the Activity and SubjectNo. columns into factors
+
 Utilize the reshape library to melt and cast the variables, in order to get the mean
+
 Write the tidy and clean dataset into a new file
